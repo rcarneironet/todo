@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rcarneironettodo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rcarneironettodo
+  template:
+    metadata:
+      labels:
+        app: rcarneironettodo 
+    spec:
+      containers:
+        - name: rcarneironettodo 
+          image: modernizationacr.azurecr.io/rcarneironettodo
+          ports:
+          - containerPort: 80
